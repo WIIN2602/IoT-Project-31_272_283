@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+      integrity="sha512-..."
+      crossorigin="anonymous"
+    />
+    <title>xyz Hotel</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <link rel="stylesheet" href="styles_index.css" />
+  </head>
+  <body>
+    <main>
+      <section class="intro">
+        <h1 class="title">xyz Hotel</h1>
+        <p>
+          This webpage is part of the course <br />89022464-64 Internet of
+          Things. <br />2/2023 Burapha University
+        </p>
+      </section>
+
+      <section class="sign-up">
+        <p class="sign-up-para">Please sign-in to continue</p>
+
+        <form class="sign-up-form">
+          <div class="form-input">
+            <input
+              type="text"
+              name="first-name"
+              id="first-name"
+              placeholder="First Name"
+              required
+            />
+            <span>!</span>
+            <p class="warning">First name cannot be empty</p>
+          </div>
+
+          <div class="form-input">
+            <input
+              type="text"
+              name="last-name"
+              id="last-name"
+              placeholder="Last Name"
+              required
+            />
+            <span>!</span>
+            <p class="warning">Last name cannot be empty</p>
+          </div>
+
+          <div class="form-input">
+            <input
+              type="email"
+              name="email"
+              id="email"
+              placeholder="Email Address"
+              required
+            />
+            <span>!</span>
+            <p class="warning">Looks like this is not an email</p>
+          </div>
+
+          <div class="form-input">
+            <input
+              type="Password"
+              name="Password"
+              id="Password"
+              placeholder="Password"
+              required
+            />
+            <span>!</span>
+            <p class="warning">Password cannot be empty</p>
+          </div>
+
+          <input class="submit-btn" type="submit" value="Claim your offer" />
+          <p class="form-term">
+            By clicking the button, you are agreeing to our
+            <span>Terms and Services</span>
+          </p>
+        </form>
+      </section>
+    </main>
+  </body>
+</html>
