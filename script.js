@@ -6,7 +6,6 @@ document.addEventListener("DOMContentLoaded", function () {
     // เลือก form ด้วย ID
     const signupForm = document.getElementById("signupForm");
 
-    // เพิ่ม event listener สำหรับ form submission
     signupForm.addEventListener("submit", function (event) {
       // ป้องกันการส่ง form ไปยัง URL ที่ระบุใน attribute action
       event.preventDefault();
