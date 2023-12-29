@@ -14,12 +14,15 @@
   <body>
     <header class="header">
       <a href="#" class="logo">XYZ Hotel</a>
-      <nav class="nav-items">
-        <a href="index.html">Home</a>
-        <a href="sign-in.html">Sign-In</a>
-        <a href="sign-up.html">Sign-Up</a>
-        <a href="#">About</a>
-      </nav>
+      <div class="dropdown">
+        <button onclick="dropdownFunction()" class="dropbtn">MENU</button>
+        <div id="myDropdown" class="dropdown-content">
+          <a href="index.html">Home</a>
+          <a href="sign-in.html">Sign In</a>
+          <a href="sign-up.html">Sign Up</a>
+          <a href="about.html">About</a>
+        </div>
+      </div>
     </header>
     <main>
       <div class="intro">
@@ -36,7 +39,7 @@
           <p class="work-heading">Check Rooms</p>
         </div>
         <div class="work">
-          <a href="BoookingRoom.html"><i class="fas fa-calendar"></i></a>
+          <a href="BookingRoom.html"><i class="fas fa-calendar"></i></a>
           <p class="work-heading">Booking Room</p>
         </div>
         <div class="work">
