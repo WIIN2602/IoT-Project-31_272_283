@@ -3,7 +3,123 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>CheckRooms</title>
+    <link rel="stylesheet" href="check.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+      <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
   </head>
-  <body></body>
+  <body>
+    <header class="header">
+      <div class="dropdown">
+        <button onclick="dropdownFunction()" class="dropbtn">MENU</button>
+        <div id="myDropdown" class="dropdown-content">
+          <a href="sign-in.html">Sign In</a>
+          <a href="sign-up.html">Sign Up</a>
+          <a href="about.html">About</a>
+        </div>
+      </div>
+    </header>
+    <div id="Single" class="tabcontent">
+      <h1>Single beds</h1>
+      <p>
+        A room assigned to one person. May have one or more beds. The room size
+        or area of Single Rooms are generally between 37 m² to 45 m².
+      </p>
+    </div>
+
+    <div id="Double" class="tabcontent">
+      <h1>Double beds</h1>
+      <p>
+        A room assigned to two people. May have one or more beds. The room size
+        or area of Double Rooms are generally between 40 m² to 45 m².
+      </p>
+    </div>
+
+    <div id="Triple" class="tabcontent">
+      <h1>Triple beds</h1>
+      <p>
+        A room that can accommodate three persons and has been fitted with three
+        twin beds, one double bed and one twin bed or two double beds. The room
+        size or area of Triple Rooms are generally between 45 m² to 65 m².
+      </p>
+    </div>
+
+    <div id="Quad" class="tabcontent">
+      <h1>Quad beds</h1>
+      <p>
+        A room assigned to four people. May have two or more beds. The room size
+        or area of Quad Rooms are generally between 70 m² to 85 m².
+      </p>
+    </div>
+
+    <div id="Queen" class="tabcontent">
+      <h1>Queen-size</h1>
+      <p>
+        A room with a queen-sized bed. May be occupied by one or more people.
+        The room size or area of Queen Rooms are generally between 32 m² to 50
+        m².
+      </p>
+    </div>
+
+    <div id="King" class="tabcontent">
+      <h1>King-size</h1>
+      <p>
+        A room with a king-sized bed. May be occupied by one or more people. The
+        room size or area of King Rooms are generally between 32 m² to 50 m².
+      </p>
+    </div>
+
+    <div id="Twin" class="tabcontent">
+      <h1>Tokyo</h1>
+      <p>
+        A room with two twin beds. May be occupied by one or more people. The
+        room size or area of Twin Rooms are generally between 32 m² to 40 m².
+      </p>
+    </div>
+
+    <div id="Suite" class="tabcontent">
+      <h1>Oslo</h1>
+      <p>
+        A parlour or living room connected with to one or more bedrooms. (A room
+        with one or more bedrooms and a separate living space.) The room size or
+        area of Suite rooms are generally between 70 m² to 100 m².
+      </p>
+    </div>
+
+    <button
+      class="tablink"
+      onclick="openCity('Single', this, '#ff2ab6')"
+      id="defaultOpen"
+    >
+      Single beds
+    </button>
+    <button class="tablink" onclick="openCity('Double', this, '#ea41b1')">
+      Double beds
+    </button>
+    <button class="tablink" onclick="openCity('Triple', this, '#d659ad')">
+      Triple beds
+    </button>
+    <button class="tablink" onclick="openCity('Quad', this, '#c170a8')">
+      Quad beds
+    </button>
+    <button class="tablink" onclick="openCity('Queen', this, '#ac88a4')">
+      Queen-sized
+    </button>
+    <button class="tablink" onclick="openCity('King', this, '#83b79a')">
+      King-sized
+    </button>
+    <button class="tablink" onclick="openCity('Twin', this, '#6ece96')">
+      Twin beds
+    </button>
+    <button class="tablink" onclick="openCity('Suite', this, '#5ae591')">
+      Suite
+    </button>
+    <footer></footer>
+    <script src="check.js"></script>
+  </body>
 </html>
