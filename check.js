@@ -1,4 +1,4 @@
-function openCity(typeroom,elmnt,color) {
+function openRooms(typeroom,elmnt,color) {
     var i, tabcontent, tablinks;
     tabcontent = document.getElementsByClassName("tabcontent");
     for (i = 0; i < tabcontent.length; i++) {
