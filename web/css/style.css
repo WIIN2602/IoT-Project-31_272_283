@@ -158,6 +158,34 @@ p {
     padding-bottom: 30px;
 }
 
+#subjects-info {
+    height: 500px;
+    background-color: white;
+}
+
+#subjects-info .subjects-img {
+    float: left;
+    width: 50%;
+    background: url('../img/ปก-7.jpg') no-repeat;
+    min-height: 100%;
+    
+}
+
+#subjects-info .subjects-content {
+    float: right;
+    width: 50%;
+    height: 100%;
+    text-align: left;
+    padding:0px;
+    overflow: hidden;
+    border:5px;
+}
+#subjects-info .subjects-content p {
+    padding-bottom: 30px;
+    color: black;
+    font-family: 'Prompt', sans-serif;
+    font-size: 25px;
+}
 
 .box {
     float: left;
