@@ -4,9 +4,11 @@ import os
 
 app = Flask(__name__)
 
+
 @app.route('/')
 def index():
-    return render_template('index.html')
+    return render_template('..\index.html')
+
 
 @app.route('/capture', methods=['POST'])
 def capture():
@@ -14,10 +16,12 @@ def capture():
     return_value, image = camera.read()  # อ่านภาพจากกล้อง
     camera.release()  # ปิดกล้อง
     if return_value:
-        cv2.imwrite('static/captured_image.jpg', image)  # เก็บภาพลงในโฟลเดอร์ static
+        # เก็บภาพลงในโฟลเดอร์ static
+        cv2.imwrite('static/captured_image.jpg', image)
         return 'Capture successful!'
     else:
         return 'Failed to capture image!'
+
 
 if __name__ == '__main__':
     app.run(debug=True)
