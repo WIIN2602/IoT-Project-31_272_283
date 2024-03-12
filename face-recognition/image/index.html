@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Camera App</title>
+</head>
+<body>
+    <h1>Web Camera App</h1>
+    <button onclick="captureImage()">Capture Image</button>
+    <script>
+        function captureImage() {
+            fetch('/capture', {method: 'POST'})
+                .then(response => {
+                    if (response.ok) {
+                        alert('Image captured successfully!');
+                    } else {
+                        alert('Failed to capture image!');
+                    }
+                });
+        }
+    </script>
+</body>
+</html>
