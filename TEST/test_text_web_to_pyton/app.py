@@ -20,16 +20,18 @@
 #     app.run(debug=True)  # Run the Flask app
 
 
-from flask import Flask, render_template
+from flask import Flask, request, render_template
 
 app = Flask(__name__)
 
 
-@app.route('/')
-def index():
-    # Pass data to the template if needed
-    message = "Hello, World!"
-    return render_template('index.html', message=message)
+@app.route('/submit', methods=['POST'])
+def submit():
+    input_text = request.form['input_text']
+    # Do something with the input text
+    print("Input text:", input_text)
+    # You can store it in a variable, database, or perform any other operation.
+    return "Text received: " + input_text
 
 
 if __name__ == '__main__':
