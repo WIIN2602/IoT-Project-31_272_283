@@ -4,6 +4,7 @@
     <mapping directory="" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/Model/nodejs-projects" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/Model/platformio-projects" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/dlib" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/face-recognition/yolov5" vcs="Git" />
   </component>
 </project>

@@ -1,25 +1,64 @@
-import face_recognition
+import dlib
+import os
+from skimage import io
+from scipy.spatial import distance
 import numpy as np
 import cv2
 
-cap = cv2.VideoCapture(0)  # default camera of laptop is 0
+path = './img_train'
 
-KK_img = face_recognition.load_image_file('img_train\KK1.jpg')
-KK_face_encode = face_recognition.face_encodings(KK_img)[0]
 
-PLENG_img = face_recognition.load_image_file('img_train\PLENG1.jpg')
-PLENG_face_encode = face_recognition.face_encodings(PLENG_img)[0]
+def mainFunc():
+    print("Start Capture")
+    id = []  # Array with the names of people entered in the database
 
-WIN_img = face_recognition.load_image_file('img_train\WIN1.jpg')
-WIN_face_encode = face_recognition.face_encodings(WIN_img)[0]
+    for f in os.listdir(path):
+        name = str(f).replace(".jpg", "")
+        id.append(name)
+    id.sort()
 
-while True:
-    ret, frame = cap.read()
-    if ret:  # if cam read(True) from cap variable, Camera is opened
-        cv2.imshow("Camera", frame)
-        # if user pess q from keyboard camera is turn off
-        if cv2.waitKey(1) & 0xFF == ord('q'):
-            print("Program has stopped by user.")
-            break
-    else:
-        break
+    print("All base: ", end='')
+    print(id)
+
+    sp = dlib.shape_predictor('shape_predictor_68_face_landmarks.dat')
+    facerec = dlib.face_recognition_model_v1(
+        'dlib_face_recognition_resnet_model_v1.dat')  # Load the trained models
+
+    # Part for extracting the descriptor (the thing that helps recognize faces) from each photo
+    detector = dlib.get_frontal_face_detector()
+    face_descriptor = []
+    imagePaths = [os.path.join(path, f) for f in os.listdir(path)]
+    imagePaths.sort()
+    for imagePath in imagePaths:
+        img = io.imread(imagePath)
+
+        dets = detector(img, 1)
+
+        for k, d in enumerate(dets):
+            shape = sp(img, d)
+
+        face_descriptor.append(facerec.compute_face_descriptor(img, shape))
+    # END
+
+    cap = cv2.VideoCapture(0)  # Turn on webcam with opencv
+
+    while (True):
+        ret, img = cap.read()  # We take the image from the webcam
+        dets_webcam = detector(img, 1)
+        for k, d in enumerate(dets_webcam):
+            shape = sp(img, d)
+        flag = True
+        face_descriptor2 = facerec.compute_face_descriptor(img, shape)
+        for i in range(0, len(face_descriptor)):
+            a = distance.euclidean(face_descriptor[i], face_descriptor2)
+            if a < 0.6:
+                print(id[i])
+                flag = False
+        if flag == True:
+            print('Unknown')
+
+    cap.release()
+    cv2.destroyAllWindows()
+
+
+mainFunc()
