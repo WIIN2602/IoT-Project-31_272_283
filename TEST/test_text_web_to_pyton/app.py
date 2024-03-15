@@ -14,7 +14,7 @@ def submit():
     # Do something with the input text
     print("Input text:", input_text)
     # You can store it in a variable, database, or perform any other operation.
-    return "Text received: " + input_text
+    return " "
 
 
 if __name__ == '__main__':
